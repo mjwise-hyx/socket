@@ -13,7 +13,7 @@ public class Client {
     public static void main(String[] args) {
         try {
 
-            Socket socket = new Socket( "127.0.0.1", 18888);
+            Socket socket = new Socket( "ngrok.uv2z.cn", 18888);
             OutputStream os = socket.getOutputStream();
             PrintWriter pw = new PrintWriter(os);
             pw.write("用户名：admin ;密码：123");
