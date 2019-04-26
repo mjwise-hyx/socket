@@ -10,13 +10,23 @@ import java.net.Socket;
  * @email; 1064042411@qq.com
  */
 public class Client {
+
+    public static final String NGROK = "ngrok.uv2z.cn";
+    public static final String VULTR = "149.28.156.230";
+
     public static void main(String[] args) {
         try {
 
-            Socket socket = new Socket( "ngrok.uv2z.cn", 18888);
+            Socket socket = new Socket( VULTR, 18888);
             OutputStream os = socket.getOutputStream();
             PrintWriter pw = new PrintWriter(os);
-            pw.write("用户名：admin ;密码：123");
+            InputStream isr =  System.in;
+//            while (!"bye".equals(isr.toString())){
+//                pw.write(isr.toString());
+//                pw.flush();
+//            }
+
+            pw.write("123");
             pw.flush();
             socket.shutdownOutput();
 
